@@ -1,0 +1,425 @@
+/*
+  QA Trends Website Stylesheet
+  This stylesheet defines the styles for the QA Trends static website. It uses a
+  clean, modern aesthetic with a blue/teal colour palette and responsive layout.
+*/
+
+/* Base resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #213045;
+  background-color: #f8f9fb;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0077b6;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #005a8d;
+}
+
+/* Navigation */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0077b6;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-menu a {
+  color: #213045;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+  color: #0077b6;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #213045;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  /* Offset the fixed header so content does not hide behind it */
+  margin-top: 70px;
+  height: calc(100vh - 70px);
+  min-height: 500px;
+  background-image: url('8650cb23-eafd-405e-9f98-c409b04ea53d.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Section */
+/* About Section */
+.about {
+  /* Use a subtle circuit-line background without any visible text. This
+     custom illustration lives in the project folder. */
+  background-image: url('about-background.png');
+  background-size: cover;
+  background-position: center;
+  color: #213045;
+
+  /* Add vertical padding so that the content doesn't sit flush against
+     the top and bottom of the coloured background. This helps avoid
+     overlap with the fixed header and ensures breathing room around
+     the section. */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.about h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.about p {
+  margin-bottom: 1rem;
+
+  /* To improve readability against the patterned background, wrap
+     paragraphs in a lightly opaque white background with rounded
+     corners. This background is only applied to the direct
+     paragraphs inside the about section (not the cards) and
+     enhances contrast while still revealing the circuit motif. */
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.vision-mission {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.vision-mission .vision,
+.vision-mission .mission {
+  flex: 1;
+  min-width: 260px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.vision-mission h3 {
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+}
+
+/* Services Section */
+.services {
+  background-color: #ffffff;
+}
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #213045;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background-color: #f1f6fb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.service-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+  font-size: 1.25rem;
+}
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.icon-wrapper {
+  background-color: #0077b6;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Market Section */
+.market {
+  background-color: #f8f9fb;
+  color: #213045;
+}
+.market h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.market p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  line-height: 1.6;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+.stat {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.stat h3 {
+  font-size: 1.75rem;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+.stat p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #ffffff;
+  color: #213045;
+}
+.contact-container {
+  text-align: center;
+}
+.contact h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.contact p {
+  margin-bottom: 2rem;
+}
+.contact-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+  text-align: left;
+}
+.contact-info h3 {
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+}
+.contact-info p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact-form {
+  flex: 1;
+  min-width: 260px;
+  text-align: left;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.contact-form button {
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  background-color: #032b44;
+  color: #fff;
+  padding: 1rem 0;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:last-child {
+  margin-right: 0;
+}
+.social-icons a:hover {
+  color: #7cc6fe;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-menu a {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .nav-menu a:last-child {
+    border-bottom: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .vision-mission {
+    flex-direction: column;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-container p {
+    margin-bottom: 1rem;
+  }
+}
